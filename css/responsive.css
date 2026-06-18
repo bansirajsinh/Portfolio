@@ -1,0 +1,279 @@
+/* ============================================
+   RESPONSIVE — TABLET (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+  /* Typography */
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.3rem; }
+
+  /* Layout */
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  /* Navbar */
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+    border-left: 1px solid var(--border-color);
+    transition: right var(--transition-base);
+    z-index: 1000;
+  }
+
+  .navbar-links.active {
+    right: 0;
+  }
+
+  .navbar-links a {
+    font-size: 1.1rem;
+  }
+
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .mobile-overlay.active {
+    display: block;
+  }
+
+  /* Grids */
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: var(--space-xl);
+  }
+
+  .hero-content {
+    order: 2;
+    align-items: center;
+  }
+
+  .hero-image {
+    order: 1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .hero p {
+    margin: 0 auto;
+  }
+
+  .btn-group {
+    justify-content: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-nav ul {
+    align-items: center;
+  }
+
+  .footer-contact-item {
+    justify-content: center;
+  }
+
+  /* Project filter buttons */
+  .filter-buttons {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--space-sm);
+  }
+
+  .filter-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* About two-col */
+  .about-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  /* Toast */
+  .toast-container {
+    left: var(--space-md);
+    right: var(--space-md);
+  }
+
+  .toast {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Typography */
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.15rem; }
+
+  body {
+    font-size: 0.95rem;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  /* Grids */
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Cards */
+  .card {
+    padding: var(--space-md);
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+  }
+
+  /* Prevent card buttons from stacking vertically and becoming huge */
+  .card .btn-group {
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    gap: var(--space-xs);
+    flex-wrap: nowrap;
+  }
+
+  .card .btn-group .btn {
+    width: auto;
+    flex: 1;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    text-align: center;
+  }
+
+  /* Hero */
+  .hero-image {
+    max-width: 220px;
+  }
+
+  .hero-image-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-image-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero-image-circle .placeholder-icon {
+    font-size: 4rem;
+  }
+
+  /* Timeline mobile optimization */
+  .timeline {
+    padding-left: var(--space-lg);
+  }
+
+  .timeline::before {
+    left: 6px;
+  }
+
+  .timeline-item::before {
+    left: calc(-1 * var(--space-lg) + 2px);
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    gap: var(--space-lg);
+  }
+
+  /* Back to top */
+  .back-to-top {
+    bottom: var(--space-md);
+    right: var(--space-md);
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  /* Navbar mobile menu */
+  .navbar-links {
+    width: 100%;
+    right: -100%;
+  }
+
+  /* Badge group */
+  .badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+
+  /* Section header */
+  .section-header {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+/* ============================================
+   RESPONSIVE — LARGE DESKTOP (min-width: 1400px)
+   ============================================ */
+@media (min-width: 1400px) {
+  :root {
+    --max-width: 1320px;
+  }
+
+  h1 { font-size: 3.5rem; }
+}
