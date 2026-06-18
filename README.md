@@ -27,31 +27,31 @@ Here is a detailed walkthrough of the user flow across the main pages of the por
 ### 1. Home Page
 **User Flow:** This is the landing page. Users are greeted with a striking hero section containing my profile picture, name, a brief intro, and call-to-action buttons (View Projects, Contact Me). As users scroll down, elements gracefully fade in. They can use the top navigation bar to seamlessly jump to other sections.
 
-![Home Page](./Screenshots/Screenshot%202026-06-18%20235939.png)
+![Home Page](./Screenshots/home.png)
 
 ### 2. Projects Page
 **User Flow:** Users navigate here to view my complete portfolio of work. The page dynamically fetches all projects from the database and displays them in beautifully styled cards. Users can filter projects by categories (e.g., Web, Mobile) and click on individual projects to view their detailed pages.
 
-![Projects Page](./Screenshots/Screenshot%202026-06-19%20000042.png)
+![Projects Page](./Screenshots/projects.png)
 
 ### 3. About Page
 **User Flow:** This section provides a deeper dive into my background, education, and work experience. It presents a chronological timeline of my journey, fetched from the backend, allowing recruiters to quickly understand my professional history.
 
-![About Page](./Screenshots/Screenshot%202026-06-18%20235957.png)
+![About Page](./Screenshots/about.png)
 
 ### 4. Skills Page
 **User Flow:** Displays a categorized list of my technical skills (Frontend, Backend, Tools, etc.). Each skill includes an animated progress bar. This visual representation helps visitors grasp my core competencies instantly.
 
-![Skills Page](./Screenshots/Screenshot%202026-06-19%20000024.png)
+![Skills Page](./Screenshots/skills.png)
 
 ### 5. Contact Page
 **User Flow:** If a user wants to get in touch, they use the contact form. They fill in their Name, Email, Subject, and Message. Upon clicking "Send Message", the form is validated. If successful, the backend saves the message to the database and automatically forwards it to my Gmail address. The user receives a success toast notification. There is also a "Direct Email" button to open the default mail client.
 
-![Contact Page](./Screenshots/Screenshot%202026-06-19%20005530.png)
+![Contact Page](./Screenshots/contact.png)
 
 **Message Confirmation Example:**
 *(Below is the successful message submission state, e.g., when "Sarah" sends a message)*
-![Message Success](./Screenshots/Screenshot%202026-06-19%20005538.png)
+![Message Success](./Screenshots/message-success.png)
 
 *(Note: The mobile responsive views are also fully optimized and adapt to smaller screens seamlessly, ensuring perfect readability and touch targets).*
 
