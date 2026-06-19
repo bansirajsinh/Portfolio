@@ -1,7 +1,21 @@
--- ============================================
--- SEED DATA — Portfolio of Gohil Bansirajsinh
--- ============================================
 USE portfolio_db;
+
+SET FOREIGN_KEY_CHECKS = 0;
+TRUNCATE TABLE project_technologies;
+TRUNCATE TABLE project_images;
+TRUNCATE TABLE project_links;
+TRUNCATE TABLE projects;
+TRUNCATE TABLE project_categories;
+TRUNCATE TABLE technologies;
+TRUNCATE TABLE skill_categories;
+TRUNCATE TABLE site_profile;
+TRUNCATE TABLE education;
+TRUNCATE TABLE work_experience;
+TRUNCATE TABLE social_links;
+TRUNCATE TABLE navigation_items;
+TRUNCATE TABLE site_settings;
+TRUNCATE TABLE certifications;
+SET FOREIGN_KEY_CHECKS = 1;
 
 -- ---- Site Profile ----
 INSERT INTO site_profile (full_name, headline, short_bio, long_bio, email, github_url, linkedin_url, location, resume_url) VALUES
@@ -167,5 +181,5 @@ INSERT INTO navigation_items (label, url, display_order) VALUES
 INSERT INTO site_settings (setting_key, setting_value) VALUES
 ('site_title', 'Bansirajsinh Gohil — Flutter & Full-Stack Developer'),
 ('site_description', 'Personal portfolio of Gohil Bansirajsinh — Flutter Developer, Full Stack Developer, Blockchain Enthusiast'),
-('footer_text', '© 2026 Gohil Bansirajsinh Pradipsinh. All rights reserved.'),
+('footer_text', '© 2026 Gohil Bansirajsinh. All rights reserved.'),
 ('contact_email', 'gohilbansirajsinh@gmail.com');
