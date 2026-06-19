@@ -2,8 +2,8 @@
 -- DATABASE SCHEMA — Portfolio of Gohil Bansirajsinh
 -- ============================================
 
-CREATE DATABASE IF NOT EXISTS portfolio_db;
-USE portfolio_db;
+-- CREATE DATABASE IF NOT EXISTS portfolio_db;
+-- USE portfolio_db;
 
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS project_technologies;

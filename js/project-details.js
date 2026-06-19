@@ -43,8 +43,6 @@ async function loadProjectDetails() {
       <div class="text-center mb-xl">
         <span class="badge badge-accent mb-md">${escapeHtml(p.category_name || 'Project')}</span>
         <h1>${escapeHtml(p.title)}</h1>
-        ${p.my_role ? `<p class="text-secondary mt-sm" style="margin: var(--space-sm) auto 0;">Role: ${escapeHtml(p.my_role)}</p>` : ''}
-        ${p.status ? `<p class="text-muted mt-sm" style="margin: var(--space-xs) auto 0;">Status: ${escapeHtml(p.status)}</p>` : ''}
       </div>
 
 
@@ -114,7 +112,7 @@ async function loadProjectDetails() {
       ` : ''}
 
       <!-- Back to Projects -->
-      <div class="text-center mt-xl">
+      <div class="text-center" style="margin-top: var(--space-xl); margin-bottom: var(--space-2xl);">
         <a href="/projects" class="btn btn-outline">← Back to Projects</a>
       </div>
     `;

@@ -1,4 +1,4 @@
-USE portfolio_db;
+-- USE portfolio_db;
 
 -- ---- Site Profile ----
 INSERT INTO site_profile (full_name, headline, short_bio, long_bio, email, github_url, linkedin_url, location, resume_url) VALUES
