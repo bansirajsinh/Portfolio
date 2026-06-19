@@ -1,20 +1,35 @@
 USE portfolio_db;
 
 SET FOREIGN_KEY_CHECKS = 0;
-TRUNCATE TABLE project_technologies;
-TRUNCATE TABLE project_images;
-TRUNCATE TABLE project_links;
-TRUNCATE TABLE projects;
-TRUNCATE TABLE project_categories;
-TRUNCATE TABLE technologies;
-TRUNCATE TABLE skill_categories;
-TRUNCATE TABLE site_profile;
-TRUNCATE TABLE education;
-TRUNCATE TABLE work_experience;
-TRUNCATE TABLE social_links;
-TRUNCATE TABLE navigation_items;
-TRUNCATE TABLE site_settings;
-TRUNCATE TABLE certifications;
+DELETE FROM project_technologies;
+DELETE FROM project_images;
+DELETE FROM project_links;
+DELETE FROM projects;
+DELETE FROM project_categories;
+DELETE FROM technologies;
+DELETE FROM skill_categories;
+DELETE FROM site_profile;
+DELETE FROM education;
+DELETE FROM work_experience;
+DELETE FROM social_links;
+DELETE FROM navigation_items;
+DELETE FROM site_settings;
+DELETE FROM certifications;
+
+ALTER TABLE project_technologies AUTO_INCREMENT = 1;
+ALTER TABLE project_images AUTO_INCREMENT = 1;
+ALTER TABLE project_links AUTO_INCREMENT = 1;
+ALTER TABLE projects AUTO_INCREMENT = 1;
+ALTER TABLE project_categories AUTO_INCREMENT = 1;
+ALTER TABLE technologies AUTO_INCREMENT = 1;
+ALTER TABLE skill_categories AUTO_INCREMENT = 1;
+ALTER TABLE site_profile AUTO_INCREMENT = 1;
+ALTER TABLE education AUTO_INCREMENT = 1;
+ALTER TABLE work_experience AUTO_INCREMENT = 1;
+ALTER TABLE social_links AUTO_INCREMENT = 1;
+ALTER TABLE navigation_items AUTO_INCREMENT = 1;
+ALTER TABLE site_settings AUTO_INCREMENT = 1;
+ALTER TABLE certifications AUTO_INCREMENT = 1;
 SET FOREIGN_KEY_CHECKS = 1;
 
 -- ---- Site Profile ----
