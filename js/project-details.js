@@ -53,7 +53,7 @@ async function loadProjectDetails() {
       ${p.full_description ? `
       <div class="card-flat mb-xl reveal">
         <h3>📝 Overview</h3>
-        <p class="mt-md mb-lg" style="max-width:100%;">${escapeHtml(p.full_description)}</p>
+        <p class="mt-md mb-lg" style="max-width:100%;">${escapeHtml(p.full_description).replace(/\\n/g, '<br>')}</p>
         <!-- CTA Buttons -->
         <div class="btn-group">
           ${p.github_url ? `<a href="${escapeHtml(p.github_url)}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-brands fa-github"></i> View on GitHub</a>` : ''}
@@ -68,12 +68,12 @@ async function loadProjectDetails() {
         ${p.problem_statement ? `
         <div class="card-flat">
           <h4>🔍 Problem Statement</h4>
-          <p class="mt-sm" style="max-width:100%;">${escapeHtml(p.problem_statement)}</p>
+          <p class="mt-sm" style="max-width:100%;">${escapeHtml(p.problem_statement).replace(/\\n/g, '<br>')}</p>
         </div>` : ''}
         ${p.solution_summary ? `
         <div class="card-flat">
           <h4>💡 Solution</h4>
-          <p class="mt-sm" style="max-width:100%;">${escapeHtml(p.solution_summary)}</p>
+          <p class="mt-sm" style="max-width:100%;">${escapeHtml(p.solution_summary).replace(/\\n/g, '<br>')}</p>
         </div>` : ''}
       </div>
       ` : ''}
