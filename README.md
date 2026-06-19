@@ -39,7 +39,7 @@ A dedicated page that organizes technical proficiency. Skills are fetched from t
 
 ### 5. About Me (`/about`)
 Provides detailed background information, education history, and professional internship experience presented in a clean vertical timeline. 
-*(Note: Replace this text with a screenshot of the about page if needed).*
+![About Page](assets/screenshots/about.png)
 
 ### 6. Contact (`/contact`)
 A functional contact form featuring client-side validation. When submitted, the backend handles the request and sends the message (integration ready). Includes quick access buttons to email, GitHub, and LinkedIn.
