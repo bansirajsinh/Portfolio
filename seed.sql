@@ -162,7 +162,7 @@ INSERT INTO project_technologies (project_id, technology_id) VALUES
 -- ---- Education ----
 INSERT INTO education (degree, institution, university, start_year, end_year, grade, description, display_order) VALUES
 ('B.E. in Information Technology', 'Shantilal Shah Engineering College', 'Gujarat Technological University', '2024', NULL, 'Pursuing', 'Currently pursuing Bachelor of Engineering in IT with focus on web technologies, mobile development, and software engineering.', 1),
-('Diploma in Information Technology', 'Gyan Manjari Diploma Engineering College', 'Gujarat Technological University', '2021', '2024', '87.2%', 'Completed diploma with strong foundation in programming, databases, and software development.', 2),
+('Diploma in Computer Engineering', 'Gyan Manjari Diploma Engineering College', 'Gujarat Technological University', '2021', '2024', '87.2%', 'Completed diploma with strong foundation in programming, databases, and software development.', 2),
 ('SSC (10th Standard)', 'Sardar Patel Education Institute', 'GSEB', '2021', '2021', '77.7%', 'Completed secondary education with science and mathematics focus.', 3);
 
 -- ---- Work Experience ----
