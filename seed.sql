@@ -80,7 +80,7 @@ INSERT INTO projects (title, slug, short_description, full_description, category
   'A full-stack website created to showcase the artistic legacy and business identity of the Gohil family from Bhavnagar, Gujarat, highlighting over 80 years of art across multiple generations. Built with AdonisJS v6, Lucid ORM, MySQL, and Edge.js for server-side rendering. Features include a hero section with legacy tagline, about section for family artists (Chitrakar Kishorsinh, Pradipkumar, Indravijaysinh), artwork gallery with filters, featured paintings section including a heritage 1946 painting, timeline milestones, contact form with database submission, and Leaflet.js map integration.',
   3,
   1,
-  NULL,
+  'https://github.com/bansirajsinh/Chitrakar_Gohil.git',
   NULL,
   3
 ),
