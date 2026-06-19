@@ -10,11 +10,13 @@ const { success, error } = require('../utils/response');
 async function getSkills(req, res, next) {
   try {
     const categories = await query(
-      `SELECT * FROM skill_categories WHERE is_active = 1 ORDER BY sort_order ASC`
+      `SELECT * FROM skill_categories ORDER BY display_order ASC`
     );
 
     const skills = await query(
-      `SELECT * FROM skills WHERE is_active = 1 ORDER BY sort_order ASC`
+      `SELECT id, technology_name as skill_name, category_id, proficiency, display_order as sort_order 
+       FROM technologies 
+       ORDER BY sort_order ASC`
     );
 
     // Group skills into their categories

@@ -12,10 +12,10 @@
   <meta property="og:description" content="Flutter Developer | Full Stack Developer | Firebase, MySQL & Blockchain Enthusiast">
   <meta property="og:type" content="website">
 
-  <!-- Fonts -->
+  <!-- Fonts — Space Grotesk + DM Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -35,45 +35,48 @@
       gap: var(--space-2xl);
       min-height: calc(100vh - var(--navbar-height));
       padding-top: var(--navbar-height);
+      position: relative;
+      overflow: hidden;
     }
 
     .hero-content {
       flex: 1;
       max-width: 620px;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-greeting {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: var(--space-xs);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-sm);
+      font-family: var(--font-mono);
+      letter-spacing: 0.05em;
     }
 
     .hero-name {
-      font-size: 2.5rem;
-      font-weight: 800;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: var(--space-md);
     }
 
-    .hero-name .accent {
-      color: var(--accent);
-    }
-
-    .hero-headline {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      margin-top: var(--space-md);
-      line-height: 1.7;
-    }
-
-    .hero-headline strong {
-      color: var(--accent);
+    .hero-role {
+      font-size: 1.3rem;
       font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-md);
+      min-height: 2rem;
+    }
+
+    .hero-role .typed-text {
+      color: var(--accent-light);
     }
 
     .hero-summary {
       font-size: 0.95rem;
       color: var(--text-secondary);
-      margin-top: var(--space-md);
+      margin-top: var(--space-sm);
       line-height: 1.8;
       max-width: 560px;
     }
@@ -89,20 +92,22 @@
     .hero-image {
       flex: 0 0 auto;
       max-width: 400px;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-image-wrapper {
       position: relative;
-      width: 350px;
-      height: 350px;
+      width: 320px;
+      height: 320px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .hero-image-circle {
-      width: 320px;
-      height: 320px;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
       border: 2px solid var(--border-color);
       display: flex;
@@ -110,6 +115,18 @@
       justify-content: center;
       background: var(--bg-card);
       overflow: hidden;
+      position: relative;
+    }
+
+    /* Gradient ring around image */
+    .hero-image-circle::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: var(--gradient-accent);
+      z-index: -1;
+      opacity: 0.5;
     }
 
     .hero-image-circle img {
@@ -119,9 +136,9 @@
     }
 
     .hero-image-circle .placeholder-icon {
-      font-size: 6rem;
+      font-size: 5rem;
       color: var(--accent);
-      opacity: 0.3;
+      opacity: 0.2;
     }
 
     /* ---- What I Do / Why Me ---- */
@@ -151,7 +168,7 @@
     }
 
     .what-why-grid li::before {
-      content: '→';
+      content: '▹';
       position: absolute;
       left: 0;
       color: var(--accent);
@@ -203,6 +220,9 @@
         width: 180px;
         height: 180px;
       }
+      .hero-name {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -229,12 +249,15 @@
   <main class="page-content">
     <!-- ===== HERO ===== -->
     <section class="hero container">
+      <!-- Gradient Mesh Background -->
+      <div class="gradient-mesh gradient-mesh-1"></div>
+      <div class="gradient-mesh gradient-mesh-2"></div>
+
       <div class="hero-content">
-        <h1 class="hero-greeting hero-animate-1">Hey there,</h1>
-        <h1 class="hero-name hero-animate-2">I'm <span class="accent">Bansirajsinh Gohil</span></h1>
-        <p class="hero-headline hero-animate-3">
-          A passionate <strong>Flutter Developer</strong> & <strong>Full-Stack Developer</strong> from Bhavnagar, Gujarat 🇮🇳, building scalable web apps and
-          <strong>cross-platform mobile experiences</strong> that combine performance with pixel-perfect design.
+        <p class="hero-greeting hero-animate-1">// hello, world</p>
+        <h1 class="hero-name hero-animate-2">Bansirajsinh <span class="gradient-text">Gohil</span></h1>
+        <p class="hero-role hero-animate-3">
+          I build <span class="typed-text" id="typedText"></span><span class="typing-cursor"></span>
         </p>
         <p class="hero-summary hero-animate-3">
           Information Technology student with hands-on experience in Flutter, full-stack web development, Firebase, MySQL, and blockchain technologies. I specialize in clean, maintainable code — from elegant UI/UX to rock-solid backend systems.
@@ -252,8 +275,30 @@
       <div class="hero-image hero-image-animate">
         <div class="hero-image-wrapper hero-float">
           <div class="hero-image-circle">
-            <i class="fa-solid fa-laptop-code placeholder-icon"></i>
+            <img src="/assets/images/profile.jpg" alt="Bansirajsinh Gohil">
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="section container">
+      <div class="stats-grid reveal-stagger">
+        <div class="stat-item">
+          <div class="stat-number" data-target="6">0</div>
+          <div class="stat-label">Projects Built</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="15">0</div>
+          <div class="stat-label">Technologies</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="2">0</div>
+          <div class="stat-label">Internships</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="4">0</div>
+          <div class="stat-label">Hackathons</div>
         </div>
       </div>
     </section>
@@ -265,7 +310,7 @@
     <section class="section container">
       <div class="what-why-grid">
         <div class="reveal-left">
-          <h3>🎯 What I Do</h3>
+          <h3>What I Do</h3>
           <ul>
             <li>Build cross-platform mobile apps with Flutter & Dart</li>
             <li>Develop full-stack web applications with Node.js, Express & MySQL</li>
@@ -276,7 +321,7 @@
           </ul>
         </div>
         <div class="reveal-right">
-          <h3>🚀 Why Me?</h3>
+          <h3>Why Me?</h3>
           <ul>
             <li>Strong problem solving & debugging mindset</li>
             <li>Excellent communication, presentation & teamwork skills</li>
@@ -292,7 +337,8 @@
     <!-- ===== FEATURED SKILLS ===== -->
     <section class="section container">
       <div class="section-header reveal">
-        <h2>💻 Featured Skills</h2>
+        <span class="section-label">Technologies</span>
+        <h2>Featured Skills</h2>
         <p>Technologies I work with daily</p>
       </div>
       <div id="featuredSkills" class="reveal-stagger">
@@ -306,7 +352,8 @@
     <!-- ===== FEATURED PROJECTS ===== -->
     <section class="section container">
       <div class="section-header reveal">
-        <h2>✨ Featured Projects</h2>
+        <span class="section-label">Portfolio</span>
+        <h2>Featured Projects</h2>
         <p>Dive into some of my finest works — crafted with passion, precision, and purpose.</p>
       </div>
       <div id="featuredProjectsGrid" class="reveal-stagger">
@@ -325,7 +372,7 @@
         <div class="footer-brand">
           <h3>Bansirajsinh Gohil</h3>
           <p>Flutter Developer • Full Stack Developer • Blockchain Enthusiast</p>
-          <p class="tagline">Crafted with ❤️ using HTML, CSS & Node.js</p>
+          <p class="tagline">Designed & Developed by Bansirajsinh</p>
         </div>
         <div class="footer-nav">
           <h4>Navigation</h4>

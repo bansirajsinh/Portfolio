@@ -1,159 +1,142 @@
-# Bansirajsinh Gohil — Premium Portfolio
+# 👨‍💻 Gohil Bansirajsinh — Professional Developer Portfolio
 
-Welcome to my personal portfolio! This is a dark-themed, minimalist, and fully responsive website that showcases my skills, experience, and projects. It features a complete **HTML/CSS/JS** frontend powered by a robust **Node.js/Express** backend and a **MySQL** database.
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 
----
-
-## 📖 Project Description
-
-This project was built from scratch to provide a visually stunning, premium-feel portfolio that is highly customizable and easy to maintain. 
-The design system focuses on a sleek near-black background (`#0a0a0a`) combined with vibrant green accents (`#22c55e`). 
-
-The goal is to provide a seamless user experience across all devices (mobile, tablet, desktop) while ensuring that all content is driven dynamically from the backend API.
-
-### Key Features:
-- **Dynamic Content**: Skills, projects, and profile data are fetched from a MySQL database.
-- **Direct Email Integration**: The contact page allows users to send messages directly to my Gmail.
-- **Scroll Animations**: Smooth entrance animations for all sections.
-- **Fully Responsive**: Tailored layouts for varying screen sizes.
-- **RESTful API**: Custom backend architecture handling routing, database queries, and email processing.
+Welcome to the source code of my **Professional Developer Portfolio**. This application is a fully responsive, dynamically generated, full-stack website designed to showcase my projects, skills, and experience as a Flutter and Full-Stack Developer. 
 
 ---
 
-## 📸 Page Previews & User Flow
+## 🌟 Project Overview
 
-Here is a detailed walkthrough of the user flow across the main pages of the portfolio:
+Unlike static portfolios, this project is powered by a robust **Node.js/Express backend** and a **MySQL database**. All data (projects, skills, categories, profile details) is fetched dynamically via REST APIs, making it incredibly easy to update content without modifying the frontend code.
 
-### 1. Home Page
-**User Flow:** This is the landing page. Users are greeted with a striking hero section containing my profile picture, name, a brief intro, and call-to-action buttons (View Projects, Contact Me). As users scroll down, elements gracefully fade in. They can use the top navigation bar to seamlessly jump to other sections.
-
-![Home Page](./Screenshots/home.png)
-
-### 2. Projects Page
-**User Flow:** Users navigate here to view my complete portfolio of work. The page dynamically fetches all projects from the database and displays them in beautifully styled cards. Users can filter projects by categories (e.g., Web, Mobile) and click on individual projects to view their detailed pages.
-
-![Projects Page](./Screenshots/projects.png)
-
-### 3. About Page
-**User Flow:** This section provides a deeper dive into my background, education, and work experience. It presents a chronological timeline of my journey, fetched from the backend, allowing recruiters to quickly understand my professional history.
-
-![About Page](./Screenshots/about.png)
-
-### 4. Skills Page
-**User Flow:** Displays a categorized list of my technical skills (Frontend, Backend, Tools, etc.). Each skill includes an animated progress bar. This visual representation helps visitors grasp my core competencies instantly.
-
-![Skills Page](./Screenshots/skills.png)
-
-### 5. Contact Page
-**User Flow:** If a user wants to get in touch, they use the contact form. They fill in their Name, Email, Subject, and Message. Upon clicking "Send Message", the form is validated. If successful, the backend saves the message to the database and automatically forwards it to my Gmail address. The user receives a success toast notification. There is also a "Direct Email" button to open the default mail client.
-
-![Contact Page](./Screenshots/contact.png)
-
-**Message Confirmation Example:**
-*(Below is the successful message submission state, e.g., when "Sarah" sends a message)*
-![Message Success](./Screenshots/message-success.png)
-
-*(Note: The mobile responsive views are also fully optimized and adapt to smaller screens seamlessly, ensuring perfect readability and touch targets).*
+The frontend is built using pure **Vanilla HTML, CSS, and JavaScript**, entirely avoiding heavy frameworks to ensure lightning-fast performance, fine-grained control over animations, and a rich, modern, glassmorphism aesthetic.
 
 ---
 
-## 🗺️ Complete User Flow Summary
+## 📸 User Flow & Page Walkthrough
 
-1. **Arrival**: The user lands on the `index.html` (Home) page, welcomed by the Hero section and animated UI.
-2. **Exploration**: The user uses the fixed navbar to navigate to **About**, **Skills**, or **Projects**.
-3. **Deep Dive**: On the Projects page, the user filters projects and clicks one to open `project-details.html`, which fetches specific project data via the API (`/api/projects/:slug`).
-4. **Action/Conversion**: After reviewing the portfolio, the user navigates to the **Contact** page.
-5. **Submission**: The user submits a form. The frontend JS (`js/contact.js`) validates the inputs and sends a POST request to `/api/contact`. 
-6. **Backend Processing**: The Node.js server validates the request, saves the record to MySQL, and uses Nodemailer to send an email to the admin.
-7. **Confirmation**: The user sees a success toast, completing the interactive loop.
+### 1. Home Page (`/`)
+The landing page serves as the entry point. It features a modern hero section with dynamic typing effects, an avatar, and a quick summary. Below the fold, it highlights key statistics, featured skills, and top projects fetched directly from the database.
+![Home Page](assets/screenshots/home.png)
+
+### 2. Projects Portfolio (`/projects`)
+This page displays all projects pulled dynamically from the MySQL database. Users can seamlessly filter projects by category (e.g., Web, App, Blockchain) using the category tabs. Each project card features a beautiful hover effect, displaying its cover image, tags, and summary.
+![Projects Page](assets/screenshots/projects.png)
+
+### 3. Project Details (`/projects/:slug`)
+Clicking on any project brings the user to a dedicated, dynamically routed details page. This page provides an in-depth breakdown of the project, including a full description, the exact technologies used, links to the Live Demo and GitHub repository, and an image gallery.
+![Project Details](assets/screenshots/project_details.png)
+
+### 4. Skills & Technologies (`/skills`)
+A dedicated page that organizes technical proficiency. Skills are fetched from the backend and automatically grouped by categories (e.g., Languages, Frontend, Backend, Tools). 
+![Skills Page](assets/screenshots/skills.png)
+
+### 5. About Me (`/about`)
+Provides detailed background information, education history, and professional internship experience presented in a clean vertical timeline. 
+*(Note: Replace this text with a screenshot of the about page if needed).*
+
+### 6. Contact (`/contact`)
+A functional contact form featuring client-side validation. When submitted, the backend handles the request and sends the message (integration ready). Includes quick access buttons to email, GitHub, and LinkedIn.
+![Contact Page](assets/screenshots/contact.png)
 
 ---
 
-## 📁 File Structure Explained
-
-The project is logically separated into frontend and backend directories for clean organization:
+## 🏗️ Architecture & File Structure
 
 ```text
 Portfolio/
-├── html/               ← All frontend structural markup
-│   ├── index.html      (Landing page)
-│   ├── about.html      (Experience and education)
-│   ├── skills.html     (Technical skills breakdown)
-│   ├── projects.html   (Project gallery)
-│   ├── project-details.html (Individual project view)
-│   └── contact.html    (Contact form)
-│
-├── css/                ← Modular Stylesheets
-│   ├── style.css       (Global variables, typography, resets)
-│   ├── components.css  (Reusable UI cards, buttons, inputs)
-│   ├── animations.css  (Scroll reveals, hover keyframes)
-│   └── responsive.css  (Media queries for mobile/tablet)
-│
-├── js/                 ← Frontend JavaScript Logic
-│   ├── api.js          (Global fetch wrapper to talk to backend)
-│   ├── app.js          (Navbar toggle, scroll listeners, global UI)
-│   ├── home.js         (Home specific logic)
-│   ├── projects.js     (Project fetching and filtering)
-│   ├── project-details.js (Dynamic project data rendering)
-│   ├── skills.js       (Skills progress bar animations)
-│   └── contact.js      (Form validation and API submission)
-│
-├── backend/            ← Node.js + Express API Server
-│   ├── server.js       (Entry point, starts the server)
-│   ├── app.js          (Express app setup, middleware, routing)
-│   ├── .env            (Environment secrets like DB/Email passwords)
-│   ├── config/         (Database connection logic)
-│   ├── api/            (Express route definitions per feature)
-│   ├── controllers/    (Business logic handling requests/responses)
-│   ├── middleware/     (Error handling, rate limiting, validation)
-│   ├── models/         (Database interaction wrappers)
-│   └── utils/          (Helpers like Nodemailer configuration)
-│
-├── schema.sql          ← SQL commands to create all database tables
-├── seed.sql            ← SQL commands to insert initial sample data
-├── deployment_guide.md ← Step-by-step instructions for hosting
-└── README.md           ← This documentation file
+├── assets/                  # Static assets (images, fonts, screenshots)
+├── backend/                 # Node.js/Express Backend Server
+│   ├── api/                 # REST API Route definitions
+│   ├── config/              # Database & server configuration
+│   ├── controllers/         # Business logic for handling API requests
+│   ├── init_db.js           # Script to initialize database schema & seed data
+│   ├── package.json         # Backend dependencies
+│   └── server.js            # Express server entry point
+├── css/                     # Styling (Vanilla CSS)
+│   ├── style.css            # Global design tokens and base styles
+│   ├── components.css       # Reusable UI components (buttons, cards)
+│   └── responsive.css       # Media queries
+├── html/                    # Frontend HTML Pages
+├── js/                      # Frontend JavaScript Logic
+│   ├── api.js               # Global API utility for fetching data
+│   ├── app.js               # Global UI logic (navbar, animations)
+│   └── ...                  # Page-specific scripts
+├── package.json             # Root package.json to forward commands to backend
+├── schema.sql               # Database Schema Definitions
+└── seed.sql                 # Initial Database Seed Data
 ```
 
 ---
 
-## 🚀 Quick Start Guide
+## 🚀 Setup & Installation (Local Development)
+
+Follow these steps to run the portfolio website locally on your machine.
 
 ### Prerequisites
-- **Node.js** v18+
-- **MySQL** 8+
+1. **Node.js** (v16 or higher)
+2. **MySQL Server** (Running locally on port 3306, e.g., via XAMPP or native install)
 
-### 1. Database Setup
-Log into your local MySQL instance and run the schema and seed scripts:
+### Step 1: Clone the Repository
 ```bash
-mysql -u root -p < schema.sql
-mysql -u root -p portfolio_db < seed.sql
+git clone https://github.com/bansirajsinh/Portfolio.git
+cd Portfolio
 ```
 
-### 2. Environment Configuration
-Edit `backend/.env` with your local database and email credentials:
+### Step 2: Install Dependencies
+The dependencies are located in the `backend` folder. You can install them from the root directory using:
+```bash
+npm run install-all
+```
+
+### Step 3: Configure Environment Variables
+Inside the `backend/` directory, create a `.env` file (or edit the existing one):
 ```env
-DB_USER=root
-DB_PASSWORD=your_mysql_password
-SMTP_USER=gohilbansirajsinh@gmail.com
-SMTP_PASS=your_gmail_app_password
+PORT=3000
+NODE_ENV=development
+
+# MySQL Database Connection
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root          # Change if your MySQL user is different
+DB_PASSWORD=          # Add your MySQL password if you have one
+DB_NAME=portfolio_db
 ```
 
-### 3. Start the Server
+### Step 4: Initialize the Database
+We have provided a script that automatically connects to your MySQL server, creates the database (`portfolio_db`), builds the tables from `schema.sql`, and fills it with data from `seed.sql`.
+
+Run the following command from the `backend` folder:
 ```bash
 cd backend
-npm install
-npm start
+node init_db.js
+cd ..
 ```
-Visit **http://localhost:3000** in your browser.
+*(You should see a success message confirming the schema and seed data were executed).*
+
+### Step 5: Start the Development Server
+From the **root folder** (`Portfolio/`), simply run:
+```bash
+npm run dev
+```
+
+The application will start the Express server on `http://localhost:3000`. 
+Open this URL in your browser to view the portfolio!
 
 ---
 
-## 🔒 Security Measures
-- **Helmet**: Secures HTTP headers.
-- **CORS**: Prevents unauthorized cross-origin requests.
-- **Rate Limiting**: Prevents API spam (e.g., 5 contact submissions per 15 mins).
-- **Prepared Statements**: Prevents SQL injection attacks across the app.
+## 🎨 Technologies Used
+
+- **Frontend:** HTML5, CSS3 (Variables, Grid, Flexbox, Animations), Vanilla JavaScript
+- **Backend:** Node.js, Express.js
+- **Database:** MySQL
+- **Design:** Glassmorphism UI, Responsive Mobile-First Design, CSS Micro-animations
 
 ---
-*Developed with focus on clean architecture, modern aesthetics, and performance.*
+*Designed & Developed by [Bansirajsinh Gohil](https://github.com/bansirajsinh)*

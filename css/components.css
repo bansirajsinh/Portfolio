@@ -1,5 +1,5 @@
 /* ============================================
-   NAVBAR
+   NAVBAR — Glassmorphism with gradient border
    ============================================ */
 .navbar {
   position: fixed;
@@ -8,9 +8,9 @@
   width: 100%;
   height: var(--navbar-height);
   background: var(--bg-navbar);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.08);
   z-index: 1000;
   transition: background var(--transition-base);
 }
@@ -31,7 +31,7 @@
 }
 
 .navbar-logo:hover {
-  color: var(--text-primary);
+  color: var(--accent-light);
 }
 
 .navbar-links {
@@ -56,14 +56,14 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--gradient-accent);
   border-radius: var(--radius-full);
   transition: width var(--transition-base);
 }
 
 .navbar-links a:hover,
 .navbar-links a.active {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 .navbar-links a:hover::after,
@@ -105,7 +105,7 @@
 }
 
 /* ============================================
-   BUTTONS
+   BUTTONS — Gradient-powered
    ============================================ */
 .btn {
   display: inline-flex;
@@ -126,26 +126,26 @@
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: var(--bg-primary);
+  background: var(--gradient-accent);
+  color: #ffffff;
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
-  color: var(--bg-primary);
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 8px 25px var(--accent-glow-strong);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
+  color: var(--accent-light);
+  border: 1px solid rgba(99, 102, 241, 0.4);
 }
 
 .btn-outline:hover {
   background: var(--accent-glow);
   color: var(--accent-light);
+  border-color: var(--accent);
   transform: translateY(-2px);
 }
 
@@ -222,7 +222,7 @@
 }
 
 /* ============================================
-   CARDS
+   CARDS — Glassmorphism with gradient border
    ============================================ */
 .card {
   background: var(--bg-card);
@@ -230,13 +230,31 @@
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+  opacity: 0;
+  transition: opacity var(--transition-base);
 }
 
 .card:hover {
   background: var(--bg-card-hover);
   border-color: var(--border-hover);
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.08);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card-title {
@@ -257,10 +275,17 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
+  transition: all var(--transition-base);
 }
 
 .card-flat:hover {
   border-color: var(--border-hover);
+}
+
+/* Card glow variant */
+.card-glow:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 30px var(--accent-glow), 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
@@ -273,7 +298,7 @@
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-secondary);
-  background: var(--bg-primary);
+  background: rgba(26, 26, 46, 0.6);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-full);
   transition: all var(--transition-fast);
@@ -281,14 +306,14 @@
 }
 
 .badge:hover {
-  color: var(--accent);
+  color: var(--accent-light);
   border-color: var(--accent);
   background: var(--accent-glow);
 }
 
 .badge-accent {
-  color: var(--accent);
-  border-color: rgba(34, 197, 94, 0.3);
+  color: var(--accent-light);
+  border-color: rgba(99, 102, 241, 0.3);
   background: var(--accent-glow);
 }
 
@@ -322,7 +347,7 @@
 }
 
 .social-link:hover {
-  color: var(--accent);
+  color: var(--accent-light);
   border-color: var(--accent);
   background: var(--accent-glow);
   transform: translateY(-2px);
@@ -425,12 +450,54 @@
 }
 
 /* ============================================
-   FOOTER
+   STATS COUNTER
+   ============================================ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.stat-item {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.stat-item:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ============================================
+   FOOTER — Geometric pattern
    ============================================ */
 .footer {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
   padding: var(--space-2xl) 0 var(--space-lg);
+  position: relative;
 }
 
 .footer-grid {
@@ -476,7 +543,7 @@
 }
 
 .footer-nav a:hover {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 .footer-contact-item {
@@ -515,8 +582,8 @@
   width: 44px;
   height: 44px;
   border-radius: var(--radius-md);
-  background: var(--accent);
-  color: var(--bg-primary);
+  background: var(--gradient-accent);
+  color: #ffffff;
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
@@ -537,9 +604,8 @@
 }
 
 .back-to-top:hover {
-  background: var(--accent-hover);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 8px 25px var(--accent-glow-strong);
 }
 
 /* ============================================

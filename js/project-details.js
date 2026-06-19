@@ -47,17 +47,18 @@ async function loadProjectDetails() {
         ${p.status ? `<p class="text-muted mt-sm" style="margin: var(--space-xs) auto 0;">Status: ${escapeHtml(p.status)}</p>` : ''}
       </div>
 
-      <!-- CTA Buttons -->
-      <div class="btn-group flex-center mb-xl">
-        ${p.github_url ? `<a href="${escapeHtml(p.github_url)}" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-brands fa-github"></i> GitHub</a>` : ''}
-        ${p.live_url ? `<a href="${escapeHtml(p.live_url)}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>` : ''}
-      </div>
+
 
       <!-- Description -->
       ${p.full_description ? `
       <div class="card-flat mb-xl reveal">
         <h3>📝 Overview</h3>
-        <p class="mt-md" style="max-width:100%;">${escapeHtml(p.full_description)}</p>
+        <p class="mt-md mb-lg" style="max-width:100%;">${escapeHtml(p.full_description)}</p>
+        <!-- CTA Buttons -->
+        <div class="btn-group">
+          ${p.github_url ? `<a href="${escapeHtml(p.github_url)}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-brands fa-github"></i> View on GitHub</a>` : ''}
+          ${p.live_url ? `<a href="${escapeHtml(p.live_url)}" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>` : ''}
+        </div>
       </div>
       ` : ''}
 

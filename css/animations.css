@@ -168,14 +168,49 @@
 }
 
 /* ============================================
+   GRADIENT MESH ANIMATION
+   ============================================ */
+@keyframes meshFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-15px, 15px) scale(0.95); }
+}
+
+@keyframes meshFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-25px, 15px) scale(0.95); }
+  66% { transform: translate(20px, -25px) scale(1.05); }
+}
+
+.gradient-mesh-1 {
+  animation: meshFloat1 8s ease-in-out infinite;
+}
+
+.gradient-mesh-2 {
+  animation: meshFloat2 10s ease-in-out infinite;
+}
+
+/* ============================================
+   TYPING CURSOR ANIMATION
+   ============================================ */
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.2em;
+  background: var(--accent);
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* ============================================
    MICRO-INTERACTIONS
    ============================================ */
-
-/* Card hover glow border */
-.card-glow:hover {
-  border-color: rgba(34, 197, 94, 0.3);
-  box-shadow: 0 0 30px var(--accent-glow), 0 4px 12px rgba(0, 0, 0, 0.3);
-}
 
 /* Link underline animation */
 .link-hover {
@@ -190,7 +225,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--gradient-accent);
   transition: width var(--transition-base);
 }
 
@@ -207,4 +242,12 @@
 .icon-spin:hover i,
 .icon-spin:hover svg {
   animation: spin 0.5s ease;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

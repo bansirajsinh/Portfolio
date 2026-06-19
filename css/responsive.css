@@ -69,6 +69,11 @@
     grid-template-columns: 1fr;
   }
 
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   /* Hero */
   .hero {
     flex-direction: column;
@@ -139,6 +144,11 @@
   .toast {
     max-width: 100%;
   }
+
+  /* Gradient mesh — smaller on mobile */
+  .gradient-mesh {
+    opacity: 0.08;
+  }
 }
 
 @media (max-width: 480px) {
@@ -164,6 +174,16 @@
     grid-template-columns: 1fr;
   }
 
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
   /* Cards */
   .card {
     padding: var(--space-md);
@@ -184,7 +204,7 @@
     width: 100%;
   }
 
-  /* Prevent card buttons from stacking vertically and becoming huge */
+  /* Prevent card buttons from stacking vertically */
   .card .btn-group {
     flex-direction: row;
     align-items: center;
