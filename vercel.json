@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "functions": {
+    "backend/app.js": {
+      "includeFiles": "{html,css,js,assets}/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/backend/app.js"
+    }
+  ]
+}
